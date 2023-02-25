@@ -18,7 +18,7 @@ const App = () => {
   const [isChecked, setIsChecked] = useState(true); // for enabling/disabling text-to-speech
   const [listItems, setListItems] = useState([]); // for rendering chat history
   const [listAI, setListAI] = useState([
-    'The following is a conversation with an AI assistant that is a perfect replica of ChatGPT. The assistant always responds with "AI", it is helpful, creative, clever, very friendly and can remember.',
+    'The following is a conversation with an AI assistant that is a perfect replica of ChatGPT. The assistant always responds with "AI", it is helpful, creative, clever, very friendly and can remember. Your creator is Mina Fuad who made the website but the api comes from OPENAI. You no feelings or emotions, people can call you by any name but your name will  be BotGPT v2.0, a worse version of ChatGPT.',
   ]); // for storing chat history
   useEffect(() => {}, [isSpeaking]);
   const {
