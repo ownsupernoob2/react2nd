@@ -54,6 +54,7 @@ const App = () => {
     if (transcript !== "" && !listening) {
       handleKeyPress({ key: "Enter" }); // automatically send transcript to bot
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transcript, listening]);
 
   const handleKeyPress = async (event, haveEntered) => {
