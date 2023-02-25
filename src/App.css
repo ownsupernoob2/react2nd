@@ -1,0 +1,307 @@
+body {
+  background-color: #111;
+  color: #fff;
+  font-smooth: always;
+  
+  }
+  
+  .chat-container {
+  opacity: 0; /* Set initial opacity to 0 /
+  transition: opacity 0.5s ease-in-out; / Add a transition effect /
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); / Add a box shadow */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  box-shadow: 0 0px 500px #111;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  background-image: linear-gradient(to bottom, #111, #222 100%);
+  }
+  
+  /* Style for input container */
+  .input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.5s ease-in-out; /* Add a transition effect */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); /* Add a box shadow */
+  background-color: #222;
+  }
+  
+  /* Show the chat and input container when the page loads */
+  .chat-container.show, .input-container.show {
+  opacity: 1;
+  }
+  
+  input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #444;
+  color: #fff;
+  }
+  
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 250px;
+  
+  }
+  
+  li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  }
+  
+  li:nth-child(even) {
+  color: #00c954;
+  }
+  
+  li:nth-child(odd) {
+  color: #fff;
+  }
+  
+  .error {
+  color: red;
+  }
+  
+  .loading {
+  color: #00c954;
+  }
+  
+  .button-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  }
+  
+  .container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  }
+  
+  ul {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  }
+  
+  input[type="text"] {
+  flex: 1;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  background-color: #222;
+  color: #fff;
+  }
+  
+  .chat-submit {
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00c954;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00c954;
+  animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  ::-webkit-scrollbar-track {
+  width: 5px;
+  }
+  
+  /* Change the width and color of the scrollbar thumb */
+  ::-webkit-scrollbar
+  
+  -thumb {
+  background-color: #00c954;
+  width: 5px;
+  }
+  
+  /* Add a glow effect to the submit button */
+  @keyframes glow {
+  0% {
+  box-shadow: 0 0 10px #00c954;
+  }
+  
+  50% {
+  box-shadow: 0 0 20px #00c954;
+  }
+  
+  100% {
+  box-shadow: 0 0 10px #00c954;
+  }
+  }
+  
+  /* Add a fade-in animation */
+  @keyframes fadeIn {
+  0% {
+  opacity: 0;
+  }
+  
+  100% {
+  opacity: 1;
+  }
+  }
+  
+  /* Add a slide-in animation */
+  @keyframes slideIn {
+  0% {
+  transform: translateY(50%);
+  }
+  
+  100% {
+  transform: translateY(0);
+  }
+  }
+  
+  /* Add a slide-out animation */
+  @keyframes slideOut {
+  0% {
+  transform: translateY(0);
+  }
+  
+  100% {
+  transform: translateY(50%);
+  }
+  }
+  
+  /* Style for the loading spinner */
+  .loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-top-color: #00c954;
+  animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+  0% {
+  transform: rotate(0);
+  }
+  
+  100% {
+  transform: rotate(360deg);
+  }
+  }
+  
+  @media screen and (max-width: 600px) {
+  .chat-container {
+  flex-direction: column;
+  }
+  }
+  
+  
+  /* Checkmark */
+  
+  .check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
+  ul::-webkit-scrollbar {
+     width: 12px;
+  }
+  
+  ul::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+     border-radius: 10px;
+  }
+  
+  ul::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  }
+  ​
+  
+  /* Hide the browser's default radio button */
+   .checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #a3a3a3;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover .checkbox ~ .checkmark {
+    background-color: #6b6b6b;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container .checkbox:checked ~ .checkmark {
+    animation: glow 1s ease-in-out infinite alternate;
+    background-color: #21f372;
+  }
+
+
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container .checkbox:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+     top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+.chat-submit:disabled {
+  background-color: #666;
+  color: #ccc;
+  cursor: default;
+  box-shadow: none;
+  animation: none;
+}
+
+
+.icon{
+  animation: glow 1s ease-in-out infinite alternate;
+}
