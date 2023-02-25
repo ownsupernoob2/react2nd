@@ -11,13 +11,11 @@ import "./App.css"; // import the CSS file
 
 const App = () => {
   // Define state variables using the useState hook
-  const [hasSpoken, setHasSpoken] = useState(false); // for microphone turning  on
   const [isSpeaking, setIsSpeaking] = useState(false); // for TTS state
   const [isTyping, setIsTyping] = useState(false); // for displaying loading state
   const [isLoading, setIsLoading] = useState(false); // for displaying loading state
   const [inputText, setInputText] = useState(""); // for input text
   const [isChecked, setIsChecked] = useState(true); // for enabling/disabling text-to-speech
-  const [responded, setResponse] = useState("basicstring"); // for error handling
   const [listItems, setListItems] = useState([]); // for rendering chat history
   const [listAI, setListAI] = useState([
     'The following is a conversation with an AI assistant that is a perfect replica of ChatGPT. The assistant always responds with "AI", it is helpful, creative, clever, very friendly and can remember.',
@@ -84,7 +82,6 @@ const App = () => {
           response.data.choices[0].text,
         ]);
 
-        setResponse(response.data.choices[0].text);
 
         if (isChecked) {
           setIsSpeaking(true);
@@ -109,7 +106,6 @@ const App = () => {
         setIsTyping(false);
         resetTranscript();
       } catch (err) {
-        setResponse("");
         setInputText("");
         console.log(err);
       }
